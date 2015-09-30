@@ -29,6 +29,7 @@
     <Content Include="assets\image\platform.png" />
     <Content Include="assets\image\sky.png" />
     <Content Include="assets\image\star.png" />
+    <Content Include="assets\sound\once.mp3" />
     <Content Include="css\app.css" />
     <Content Include="index.html" />
     <Content Include="lib\jquery-1.10.2.min.js" />
