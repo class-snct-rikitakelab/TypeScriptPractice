@@ -21,19 +21,16 @@ class SimpleGame {
         this.jetSprite.pivot.x = this.jetSprite.width / 2;
         this.jetSprite.pivot.y = this.jetSprite.height / 2;
 
-        // You can handle mouse input by registering a callback as well
-        // The following registers a callback that will be called each time the mouse is moved
-        this.game.input.addMoveCallback((pointer: Phaser.Pointer, x: number, y: number, downState: boolean) => {
-            this.jetSprite.position.set(x, y);
-        }, this);
+        this.jetSprite.pivot.x = this.jetSprite.width / 2;
+        this.jetSprite.pivot.y = this.jetSprite.height / 2;
 
-        // This one registers a mouse click handler that will be called
-        this.game.input.onHold.add(SimpleGame.prototype.mouseDown, this);
-    }
-
-    mouseDown(event: MouseEvent) {
-        //alert("Mouse is down " + event.button);
-        console.log(this.jetSprite.x);
+        // First enable the sprite to receive input
+        this.jetSprite.inputEnabled = true;
+        
+        // Then add an event handler for input over
+        this.jetSprite.events.onInputOver.add(() => {
+            alert("The mouse passed over the sprite!");
+        });
     }
 
 }
