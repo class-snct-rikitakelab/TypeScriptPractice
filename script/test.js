@@ -9,14 +9,16 @@ var SimpleGame = (function () {
         var loader = this.game.load.image("jet", "assets/image/star.png");
     };
     SimpleGame.prototype.create = function () {
+        var _this = this;
         this.jetSprite = this.game.add.sprite(50, 50, "jet");
-        this.jetSprite.pivot.x = this.jetSprite.width / 2;
-        this.jetSprite.pivot.y = this.jetSprite.height / 2;
         this.jetSprite.pivot.x = this.jetSprite.width / 2;
         this.jetSprite.pivot.y = this.jetSprite.height / 2;
         this.jetSprite.inputEnabled = true;
         this.jetSprite.events.onInputDown.add(function () {
-            alert("click?");
+            _this.jetSprite.destroy();
+        });
+        this.jetSprite.events.onDestroy.add(function () {
+            alert("destroy!");
         });
     };
     return SimpleGame;

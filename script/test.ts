@@ -21,9 +21,6 @@ class SimpleGame {
         this.jetSprite.pivot.x = this.jetSprite.width / 2;
         this.jetSprite.pivot.y = this.jetSprite.height / 2;
 
-        this.jetSprite.pivot.x = this.jetSprite.width / 2;
-        this.jetSprite.pivot.y = this.jetSprite.height / 2;
-
         // First enable the sprite to receive input
         this.jetSprite.inputEnabled = true;
         
@@ -33,8 +30,13 @@ class SimpleGame {
         //});
 
         this.jetSprite.events.onInputDown.add(() => {
-            alert("click?");
+            this.jetSprite.destroy();
         });
+
+        this.jetSprite.events.onDestroy.add(() => {
+            alert("destroy!");
+        });
+        
     }
 
 }
