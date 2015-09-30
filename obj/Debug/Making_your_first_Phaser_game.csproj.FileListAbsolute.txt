@@ -1,0 +1,6 @@
+C:\Users\小松秀生\Desktop\プログラミング\MelOn-Project\practice\Making_your_first_Phaser_game\Making_your_first_Phaser_game\bin\Making_your_first_Phaser_game.dll.config
+C:\Users\小松秀生\Desktop\プログラミング\MelOn-Project\practice\Making_your_first_Phaser_game\Making_your_first_Phaser_game\bin\Making_your_first_Phaser_game.dll
+C:\Users\小松秀生\Desktop\プログラミング\MelOn-Project\practice\Making_your_first_Phaser_game\Making_your_first_Phaser_game\bin\Making_your_first_Phaser_game.pdb
+C:\Users\小松秀生\Desktop\プログラミング\MelOn-Project\practice\Making_your_first_Phaser_game\Making_your_first_Phaser_game\obj\Debug\Making_your_first_Phaser_game.csprojResolveAssemblyReference.cache
+C:\Users\小松秀生\Desktop\プログラミング\MelOn-Project\practice\Making_your_first_Phaser_game\Making_your_first_Phaser_game\obj\Debug\Making_your_first_Phaser_game.dll
+C:\Users\小松秀生\Desktop\プログラミング\MelOn-Project\practice\Making_your_first_Phaser_game\Making_your_first_Phaser_game\obj\Debug\Making_your_first_Phaser_game.pdb
