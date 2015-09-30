@@ -28,8 +28,12 @@ class SimpleGame {
         this.jetSprite.inputEnabled = true;
         
         // Then add an event handler for input over
-        this.jetSprite.events.onInputOver.add(() => {
-            alert("The mouse passed over the sprite!");
+        //this.jetSprite.events.onInputOver.add(() => {
+        //    alert("The mouse passed over the sprite!");
+        //});
+
+        this.jetSprite.events.onInputDown.add(() => {
+            alert("click?");
         });
     }
 

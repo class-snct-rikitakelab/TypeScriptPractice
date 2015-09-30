@@ -15,8 +15,8 @@ var SimpleGame = (function () {
         this.jetSprite.pivot.x = this.jetSprite.width / 2;
         this.jetSprite.pivot.y = this.jetSprite.height / 2;
         this.jetSprite.inputEnabled = true;
-        this.jetSprite.events.onInputOver.add(function () {
-            alert("The mouse passed over the sprite!");
+        this.jetSprite.events.onInputDown.add(function () {
+            alert("click?");
         });
     };
     return SimpleGame;
