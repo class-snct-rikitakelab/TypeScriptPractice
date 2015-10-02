@@ -22,6 +22,12 @@ var PhaserFirstAssets = (function (_super) {
                 ["dude", "dude.png", new CONSTANTS.Player().width, new CONSTANTS.Player().height],
             ]
         };
+        this.audio = {
+            address: "assets/sound/",
+            assets: [
+                ["jump", ["jump.mp3",]],
+            ]
+        };
     }
     return PhaserFirstAssets;
 })(AssetLoader);

@@ -54,6 +54,7 @@ class Player extends SpriteObject{
 
         if (this.cursors.up.isDown && this.body.touching.down) {
             this.moveVertically("stop", -this.constants.velocityV);
+            this.game.add.audio("jump").play();
         }
     }
 

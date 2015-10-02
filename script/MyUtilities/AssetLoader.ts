@@ -23,6 +23,13 @@ class AssetLoader {
         ]
     }
 
+    protected audio: { address: string, assets: [string, string[]][] } = {
+        address: "",
+        assets: [
+            ["", []]
+        ]
+    }
+
     constructor() {
     }
 
@@ -46,5 +53,11 @@ class AssetLoader {
     }
 
     private loadAudio(loader: Phaser.Loader) {
+        this.audio.assets.forEach((asset: any) => {
+            asset[this.enum.FILE_NAME] = asset[this.enum.FILE_NAME].map((value: string): string => {
+                return this.audio.address + value;
+            });
+            loader.audio(asset[this.enum.KEY], asset[this.enum.FILE_NAME]);
+        });
     }
 }

@@ -19,6 +19,12 @@ var AssetLoader = (function () {
                 ["", "", 0, 0]
             ]
         };
+        this.audio = {
+            address: "",
+            assets: [
+                ["", []]
+            ]
+        };
     }
     AssetLoader.prototype.load = function (loader) {
         this.loadImage(loader);
@@ -38,6 +44,13 @@ var AssetLoader = (function () {
         });
     };
     AssetLoader.prototype.loadAudio = function (loader) {
+        var _this = this;
+        this.audio.assets.forEach(function (asset) {
+            asset[_this.enum.FILE_NAME] = asset[_this.enum.FILE_NAME].map(function (value) {
+                return _this.audio.address + value;
+            });
+            loader.audio(asset[_this.enum.KEY], asset[_this.enum.FILE_NAME]);
+        });
     };
     return AssetLoader;
 })();

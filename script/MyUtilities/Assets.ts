@@ -16,4 +16,11 @@ class PhaserFirstAssets extends AssetLoader {
             ["dude", "dude.png", new CONSTANTS.Player().width, new CONSTANTS.Player().height],
         ]
     }
+
+    protected audio: { address: string, assets: [string, string[]][] } = {
+        address: "assets/sound/",
+        assets: [
+            ["jump", ["jump.mp3", ]],
+        ]
+    }
 }
