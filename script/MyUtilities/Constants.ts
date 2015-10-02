@@ -1,6 +1,6 @@
 ﻿/// <reference path="../reference.ts"/>
 
-// We have to consider order...
+// We have to consider order... due to JavaScript code.
 
 namespace CONSTANTS {
     export class Game{
@@ -15,7 +15,7 @@ namespace CONSTANTS {
         };
     }
 
-    export interface Object {
+    export interface SpriteObject {
         width: number;
         height: number;
         x: number;
@@ -24,7 +24,7 @@ namespace CONSTANTS {
         images: { [name: string]: string };
     }
 
-    export class Ground implements Object{
+    export class Ground implements SpriteObject{
         width: number = new Game().width;
         height: number = 64;
         x: number = 0;
@@ -33,6 +33,7 @@ namespace CONSTANTS {
         images: { [name: string]: string } = {
             ground: "ground",
         };
+        immovable: boolean = true;
     } 
 
     export class Ledge1 extends Ground {
@@ -47,7 +48,7 @@ namespace CONSTANTS {
         y: number = 250;
     }
 
-    export class Player implements Object{
+    export class Player implements SpriteObject{
         width: number = 32;
         height: number = 48;
         x: number = 32
@@ -55,10 +56,17 @@ namespace CONSTANTS {
         initImage: string = "player";
         images: { [name: string]: string } = {
             player: "dude",
-        }
+        };
+        collideWorldBounce: boolean = true;
+        bounceV: number = 0.2;
+        gravityV: number =  700;
+        velocityH: number = 300;
+        velocityV: number = 600;
+        ScoreFont: Object = { fontSize: '12px', fill: '#000' };
+        correctStarEvent: string = "correctStarEvent";
     }
 
-    export class Star implements Object {
+    export class Star implements SpriteObject {
         width: number = 30;
         height: number = 30;
         x: number = 70;
@@ -67,5 +75,12 @@ namespace CONSTANTS {
         images: { [name: string]: string } = {
             star: "star",
         }
+        collideWorldBounce: boolean = true;
+        bounceV: number = 0.7 + Math.random() * 0.2;
+        gravityV: number = 50;
+    }
+
+    export class Score {
+        point: number = 10;
     }
 }

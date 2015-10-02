@@ -24,5 +24,5 @@ var PhaserFirstAssets = (function (_super) {
         };
     }
     return PhaserFirstAssets;
-})(ASSET_LOADER);
+})(AssetLoader);
 //# sourceMappingURL=Assets.js.map

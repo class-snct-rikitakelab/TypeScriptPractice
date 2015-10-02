@@ -47,11 +47,16 @@
     <TypeScriptCompile Include="declaration\phaser.d.ts" />
     <TypeScriptCompile Include="declaration\pixi.d.ts" />
     <TypeScriptCompile Include="script\MyUtilities\Assets.ts" />
-    <TypeScriptCompile Include="script\Objects\Background.ts" />
+    <TypeScriptCompile Include="script\MyUtilities\PhaserGame.ts" />
+    <TypeScriptCompile Include="script\MyUtilities\SpriteObject.ts" />
+    <TypeScriptCompile Include="script\Observer\Background.ts" />
     <TypeScriptCompile Include="script\MyUtilities\Constants.ts" />
-    <TypeScriptCompile Include="script\Objects\PhaserGroupObject.ts" />
-    <TypeScriptCompile Include="script\MyUtilities\MyPhaserGame.ts" />
-    <TypeScriptCompile Include="script\Objects\Player.ts" />
+    <TypeScriptCompile Include="script\MyUtilities\ContactManager.ts" />
+    <TypeScriptCompile Include="script\Observer\Ground.ts" />
+    <TypeScriptCompile Include="script\MyUtilities\AssetLoader.ts" />
+    <TypeScriptCompile Include="script\Observer\Player.ts" />
+    <TypeScriptCompile Include="script\Subject\Score.ts" />
+    <TypeScriptCompile Include="script\Observer\Star.ts" />
     <TypeScriptCompile Include="script\reference.ts" />
     <TypeScriptCompile Include="script\test.ts" />
   </ItemGroup>

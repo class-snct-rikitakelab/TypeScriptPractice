@@ -1,0 +1,1 @@
+{"version":3,"file":"CollideManager.js","sourceRoot":"","sources":["CollideManager.ts"],"names":["CollisionManager","CollisionManager.constructor","CollisionManager.checkAll"],"mappings":"AAAA,uCAAuC;AAEvC;IAEIA,0BAAoBA,OAA8BA;QAA9BC,YAAOA,GAAPA,OAAOA,CAAuBA;QADlDA,qBAAgBA,GAAmBA,EAAEA,CAACA;IAGtCA,CAACA;IAIDD,mCAAQA,GAARA;IACAE,CAACA;IACLF,uBAACA;AAADA,CAACA,AAVD,IAUC"}

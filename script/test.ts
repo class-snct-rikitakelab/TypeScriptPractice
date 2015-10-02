@@ -1,6 +1,7 @@
 ﻿/// <reference path="reference.ts"/>
 
 // This code demonstrates polling for touch or mouse clicks
+/*
 class SimpleGame {
     game: Phaser.Game;
     sound: Phaser.Sound;
@@ -86,6 +87,44 @@ class SimpleGame {
         }
             , this);
         this.volDownButton.addChild(new Phaser.Text(this.game, 17, 18, "Mute", { fill: '#ff0000' }));
+    }
+}
+*/
+
+class SimpleGame {
+    game: Phaser.Game;
+    sound1: Phaser.Sound;
+    sound2: Phaser.Sound;
+    count: number = 0;
+
+    constructor() {
+        this.game = new Phaser.Game(640, 480, Phaser.AUTO, 'content',
+            {
+                create: this.create, preload: this.preload,
+                update: this.update, 
+            });
+    }
+    preload() {
+        this.game.load.audio("GameMusic", ["assets/sound/once.mp3"]);
+    }
+    create() {
+        this.count = 0;
+        this.sound1 = this.game.add.audio('GameMusic');
+        this.sound2 = this.game.add.audio('GameMusic');
+
+        this.sound1.play();
+        this.sound1.onPlay.add(() => {
+            this.game.debug.text("play", 100, 100);
+        });
+    }
+
+    update() {
+        this.count++;
+        if (this.count == 500) {
+            this.game.debug.text("play", 100, 150);
+            this.sound2.play();
+        }
+        this.game.debug.text(this.count.toString(), 100, 100);
     }
 }
 

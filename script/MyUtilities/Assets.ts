@@ -1,6 +1,6 @@
 ﻿/// <reference path="../reference.ts"/>
 
-class PhaserFirstAssets extends ASSET_LOADER {
+class PhaserFirstAssets extends AssetLoader {
     protected images: { address: string, assets: [string, string][] } = {
         address: "assets/image/",
         assets: [

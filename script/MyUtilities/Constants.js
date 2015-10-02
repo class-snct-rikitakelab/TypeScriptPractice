@@ -34,6 +34,7 @@ var CONSTANTS;
             this.images = {
                 ground: "ground",
             };
+            this.immovable = true;
         }
         return Ground;
     })();
@@ -70,6 +71,13 @@ var CONSTANTS;
             this.images = {
                 player: "dude",
             };
+            this.collideWorldBounce = true;
+            this.bounceV = 0.2;
+            this.gravityV = 700;
+            this.velocityH = 300;
+            this.velocityV = 600;
+            this.ScoreFont = { fontSize: '12px', fill: '#000' };
+            this.correctStarEvent = "correctStarEvent";
         }
         return Player;
     })();
@@ -84,9 +92,19 @@ var CONSTANTS;
             this.images = {
                 star: "star",
             };
+            this.collideWorldBounce = true;
+            this.bounceV = 0.7 + Math.random() * 0.2;
+            this.gravityV = 50;
         }
         return Star;
     })();
     CONSTANTS.Star = Star;
+    var Score = (function () {
+        function Score() {
+            this.point = 10;
+        }
+        return Score;
+    })();
+    CONSTANTS.Score = Score;
 })(CONSTANTS || (CONSTANTS = {}));
 //# sourceMappingURL=Constants.js.map

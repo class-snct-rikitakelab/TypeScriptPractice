@@ -1,6 +1,6 @@
 ﻿/// <reference path="../reference.ts"/>
 
-class ASSET_LOADER {
+class AssetLoader {
 
     private enum = {
         KEY: 0,
@@ -46,29 +46,5 @@ class ASSET_LOADER {
     }
 
     private loadAudio(loader: Phaser.Loader) {
-    }
-}
-
-class PhaserGame {
-    // Phaser.js
-    protected game: Phaser.Game;
-    
-     // Create game world.
-    constructor(assets: ASSET_LOADER, protected constants: CONSTANTS.Game) {
-        var gc = this.constants;
-        this.game = new Phaser.Game(gc.width, gc.height, Phaser.AUTO, gc.renderer, {
-            preload: () => { assets.load(this.game.load); },
-            create: this.create, update: this.update
-        });
-    }
-
-    // start the game
-    protected create() {
-        // override!
-    }
-
-    // do it on each frame
-    protected update() {
-        // override!
     }
 }
