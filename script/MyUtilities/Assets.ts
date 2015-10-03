@@ -8,9 +8,6 @@ class PhaserFirstAssets extends AssetLoader {
             ["ground", "platform.png"],
             ["star", "star.png"],
             ["preloadBar", "preloadBar.png"],
-            ["a", "baddie.png"],
-            ["b", "diamond.png"],
-            ["c", "firstaid.png"],
         ],
     }
 
@@ -24,7 +21,8 @@ class PhaserFirstAssets extends AssetLoader {
     protected audio: { address: string, assets: [string, string[]][] } = {
         address: "assets/sound/",
         assets: [
-            ["jump", ["jump.mp3", ]],
+            ["jump", ["idou_ochiru_normal.mp3", ]],
+            ["correct", ["correct.mp3", ]],
             ["bgm", ["once.mp3", ]],
         ]
     }

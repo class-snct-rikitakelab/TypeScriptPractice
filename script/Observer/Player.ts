@@ -48,6 +48,15 @@ class Player extends SpriteObject{
         this.body.velocity.y = velocity;
         this.animations.play(animation);
     }
+
+    private jump() {
+        this.moveVertically("stop", -this.constants.velocityV);
+        this.game.sound.play("jump");
+    }
+
+    private tupJump(pointer: Phaser.Pointer, doubleTap: boolean) {
+        if (this.body.touching.down && doubleTap) this.jump();
+    }
     
     update() {
         this.updatePosition();
@@ -55,23 +64,13 @@ class Player extends SpriteObject{
     }
 
     private updatePosition() {
-        var isLeft: boolean = this.cursors.left.isDown || (this.pointer.isDown && this.pointer.x < this.x);
-        var isRight: boolean = this.cursors.right.isDown || (this.pointer.isDown && this.pointer.x > this.x + this.width);
+        var isLeft = this.cursors.left.isDown || (this.pointer.isDown && this.pointer.x < this.x);
+        var isRight = this.cursors.right.isDown || (this.pointer.isDown && this.pointer.x > this.x + this.width);
         if (isLeft) { this.moveHorizontally("left", -this.constants.velocityH); }
         else if (isRight) { this.moveHorizontally("right", this.constants.velocityH); }
         else { this.moveHorizontally("stop", 0); }
 
-        if (this.cursors.up.isDown && this.body.touching.down) {
-            this.moveVertically("stop", -this.constants.velocityV);
-            this.game.add.audio("jump").play();
-        }
-    }
-
-    private tupJump(pointer: Phaser.Pointer, doubleTap: boolean) {
-        if (this.body.touching.down && doubleTap) {
-            this.moveVertically("stop", -this.constants.velocityV);
-            this.game.add.audio("jump").play();
-        }
+        if (this.cursors.up.isDown && this.body.touching.down) this.jump();
     }
     
     private updateScoreText() {

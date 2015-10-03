@@ -1,8 +1,6 @@
 ﻿/// <reference path="../reference.ts"/>
 
 class AssetLoader {
-    private preloadBarFile: string = 'assets/image/preloadBar.png'
-
     private enum = {
         KEY: 0,
         FILE_NAME: 1,

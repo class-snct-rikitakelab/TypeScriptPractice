@@ -3,7 +3,6 @@
 // 小松
 //
 
-//　スクリプトの場所:階層構造をここで決める
 var SCRIPT_LOCATION = "script/";
 var SCRIPT_LOCATION_MY_UTILITIES = SCRIPT_LOCATION + "MyUtilities/";
 var SCRIPT_LOCATION_OBSERVER = SCRIPT_LOCATION + "Observer/";
@@ -12,14 +11,14 @@ var SCRIPT_LOCATION_SUBJECT = SCRIPT_LOCATION + "Subject/";
 
 // スクリプトの場所にそのブロックの名前を付ける。SCRIPT_MAPのブロック名と一致させること。
 var SCRIPT_LOCATION_MAP = {
-	MyUtilities: SCRIPT_LOCATION_MY_UTILITIES,
-	Observer: SCRIPT_LOCATION_OBSERVER,
-	Subject: SCRIPT_LOCATION_SUBJECT,
+    MyUtilities: SCRIPT_LOCATION_MY_UTILITIES,
+    Observer: SCRIPT_LOCATION_OBSERVER,
+    Subject: SCRIPT_LOCATION_SUBJECT,
 };
 
 //　追加するファイルをブロックに分けられる。LOCATION_MAPのブロック名と一致させること。
 var SCRIPT_MAP = {
-	MyUtilities:
+    MyUtilities:
 	[
         "PhaserGame.js",
         "AssetLoader.js",
@@ -29,7 +28,7 @@ var SCRIPT_MAP = {
         "SpriteObject.js",
 	],
 
-	Observer:
+    Observer:
 	[
         "Background.js",
         "Ground.js",
@@ -37,7 +36,7 @@ var SCRIPT_MAP = {
         "Player.js",
 	],
 
-	Subject:
+    Subject:
     [
         "Score.js",
     ],

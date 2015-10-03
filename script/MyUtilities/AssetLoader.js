@@ -1,7 +1,6 @@
 /// <reference path="../reference.ts"/>
 var AssetLoader = (function () {
     function AssetLoader() {
-        this.preloadBarFile = 'assets/image/preloadBar.png';
         this.enum = {
             KEY: 0,
             FILE_NAME: 1,

@@ -30,15 +30,16 @@
     <Content Include="assets\image\preloadBar.png" />
     <Content Include="assets\image\sky.png" />
     <Content Include="assets\image\star.png" />
-    <Content Include="assets\sound\jump.mp3" />
+    <Content Include="assets\sound\correct.mp3" />
+    <Content Include="assets\sound\idou_ochiru_normal.mp3" />
     <Content Include="assets\sound\once.mp3" />
     <Content Include="css\app.css" />
+    <Content Include="ImportJSFiles.js" />
     <Content Include="index.html" />
     <Content Include="lib\jquery-1.10.2.min.js" />
     <Content Include="lib\jquery-ui-1.10.3.custom.min.js" />
     <Content Include="lib\phaser.js" />
     <Content Include="lib\phaser.min.js" />
-    <Content Include="ImportJSFiles.js" />
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>

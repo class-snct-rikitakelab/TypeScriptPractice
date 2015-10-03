@@ -43,6 +43,14 @@ var Player = (function (_super) {
         this.body.velocity.y = velocity;
         this.animations.play(animation);
     };
+    Player.prototype.jump = function () {
+        this.moveVertically("stop", -this.constants.velocityV);
+        this.game.sound.play("jump");
+    };
+    Player.prototype.tupJump = function (pointer, doubleTap) {
+        if (this.body.touching.down && doubleTap)
+            this.jump();
+    };
     Player.prototype.update = function () {
         this.updatePosition();
         this.updateScoreText();
@@ -59,16 +67,8 @@ var Player = (function (_super) {
         else {
             this.moveHorizontally("stop", 0);
         }
-        if (this.cursors.up.isDown && this.body.touching.down) {
-            this.moveVertically("stop", -this.constants.velocityV);
-            this.game.add.audio("jump").play();
-        }
-    };
-    Player.prototype.tupJump = function (pointer, doubleTap) {
-        if (this.body.touching.down && doubleTap) {
-            this.moveVertically("stop", -this.constants.velocityV);
-            this.game.add.audio("jump").play();
-        }
+        if (this.cursors.up.isDown && this.body.touching.down)
+            this.jump();
     };
     Player.prototype.updateScoreText = function () {
         this.scoreText.x = this.x + this.width / 2;

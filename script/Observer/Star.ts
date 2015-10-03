@@ -13,6 +13,7 @@ class Star extends SpriteObject {
     }
 
     onOverlap(partner: SpriteObject) {
+        this.game.sound.play("correct");
         this.kill();
     }
 }

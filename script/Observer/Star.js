@@ -17,6 +17,7 @@ var Star = (function (_super) {
         this.body.gravity.y = constants.gravityV;
     };
     Star.prototype.onOverlap = function (partner) {
+        this.game.sound.play("correct");
         this.kill();
     };
     return Star;

@@ -12,6 +12,9 @@ var PhaserFirstGame = (function (_super) {
     PhaserFirstGame.prototype.create = function () {
         var _this = this;
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
+        this.game.stage.backgroundColor = "navy";
+        this.game.stage.disableVisibilityChange = true;
+        this.game.sound.play("bgm", 1.0, true);
         this.score = new Score(this.game, new CONSTANTS.Score);
         new Background(this.game, new CONSTANTS.Background);
         this.grounds = this.game.add.group();
