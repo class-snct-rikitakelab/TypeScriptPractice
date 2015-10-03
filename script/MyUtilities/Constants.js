@@ -17,6 +17,10 @@ var CONSTANTS;
     CONSTANTS.Game = Game;
     var Background = (function () {
         function Background() {
+            this.width = new Game().width;
+            this.height = new Game().height;
+            this.x = 0;
+            this.y = 0;
             this.initImage = "background";
             this.images = {
                 background: "sky",

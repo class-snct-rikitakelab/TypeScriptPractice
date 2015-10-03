@@ -4,16 +4,16 @@
 //
 
 var SCRIPT_LOCATION = "script/";
-var SCRIPT_LOCATION_MY_UTILITIES = SCRIPT_LOCATION + "MyUtilities/";
-var SCRIPT_LOCATION_OBSERVER = SCRIPT_LOCATION + "Observer/";
-var SCRIPT_LOCATION_SUBJECT = SCRIPT_LOCATION + "Subject/";
+var MY_UTILITIES = SCRIPT_LOCATION + "MyUtilities/";
+var MODEL = SCRIPT_LOCATION + "Model/";
+var VIEW = SCRIPT_LOCATION + "View/";
 
 
 // スクリプトの場所にそのブロックの名前を付ける。SCRIPT_MAPのブロック名と一致させること。
 var SCRIPT_LOCATION_MAP = {
-    MyUtilities: SCRIPT_LOCATION_MY_UTILITIES,
-    Observer: SCRIPT_LOCATION_OBSERVER,
-    Subject: SCRIPT_LOCATION_SUBJECT,
+    MyUtilities: MY_UTILITIES,
+    Model: MODEL,
+    View: VIEW,
 };
 
 //　追加するファイルをブロックに分けられる。LOCATION_MAPのブロック名と一致させること。
@@ -25,21 +25,21 @@ var SCRIPT_MAP = {
         "Assets.js",
         "Constants.js",
         "ContactManager.js",
-        "SpriteObject.js",
+        "Model.js",
+        "View.js",
 	],
 
-    Observer:
+    Model:
+    [
+        "Score.js",
+    ],
+
+    View:
 	[
-        "Background.js",
         "Ground.js",
         "Star.js",
         "Player.js",
 	],
-
-    Subject:
-    [
-        "Score.js",
-    ],
 };
 
 

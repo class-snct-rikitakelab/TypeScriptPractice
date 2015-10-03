@@ -2,25 +2,26 @@
 
 class PhaserFirstGame extends PhaserGame{
     // Declare Model and View in Main class like this.
+    private score: Score;
     private grounds: Phaser.Group;
     private stars: Phaser.Group;
     private player: Player;
     private contactMgr: ContactManager;
-    private score: Score;
 
     protected create() {
+        // =========== Setting game ==========
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
-
-        this.game.stage.backgroundColor = "navy";
 
         // Keep running on losing focus of game!
         this.game.stage.disableVisibilityChange = true;
 
         this.game.sound.play("bgm", 1.0, true);
 
+        // ========== Model ===========
         this.score = new Score(this.game, new CONSTANTS.Score);
 
-        new Background(this.game, new CONSTANTS.Background);
+        // ========== View ==========
+        new SpriteObject(this.game, new CONSTANTS.Background);
 
         this.grounds = this.game.add.group();
         var children = [new CONSTANTS.Ground, new CONSTANTS.Ledge1, new CONSTANTS.Ledge2];
@@ -33,9 +34,11 @@ class PhaserFirstGame extends PhaserGame{
             this.stars.add(star);
         }
 
-        this.player = new Player(this.game, new CONSTANTS.Player, this.score);
+        this.player = new Player(this.game, new CONSTANTS.Player, { score: this.score });
         this.player.onCorrectStar(() => { this.score.scoreUp(); });
 
+
+        // ========== Others ===========
         this.contactMgr = new ContactManager(this.game);
         this.contactMgr.addCollide(this.player, this.grounds);
         this.contactMgr.addCollide(this.grounds, this.stars);

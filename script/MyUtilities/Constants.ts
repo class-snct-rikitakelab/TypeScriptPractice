@@ -9,13 +9,6 @@ namespace CONSTANTS {
         renderer: string = "content";
     }
 
-    export class Background{
-        initImage: string = "background";
-        images: {[name: string]: string} = {
-            background: "sky",
-        };
-    }
-
     export interface SpriteObject {
         width: number;
         height: number;
@@ -25,12 +18,23 @@ namespace CONSTANTS {
         images: { [name: string]: string };
     }
 
+    export class Background implements SpriteObject {
+        width = new Game().width;
+        height = new Game().height;
+        x = 0;
+        y = 0;
+        initImage = "background";
+        images: { [name: string]: string } = {
+            background: "sky",
+        };
+    }
+
     export class Ground implements SpriteObject{
-        width: number = new Game().width;
-        height: number = 64;
-        x: number = 0;
-        y: number = new Game().height - this.height;
-        initImage: string = "ground";
+        width = new Game().width;
+        height = 64;
+        x = 0;
+        y = new Game().height - this.height;
+        initImage = "ground";
         images: { [name: string]: string } = {
             ground: "ground",
         };
@@ -38,23 +42,23 @@ namespace CONSTANTS {
     } 
 
     export class Ledge1 extends Ground {
-        width: number = 400;
-        height: number = 32;
-        x: number = 400;
-        y: number = 400;
+        width = 400;
+        height = 32;
+        x = 400;
+        y = 400;
     }
 
     export class Ledge2 extends Ledge1 {
-        x: number = -150;
-        y: number = 250;
+        x = -150;
+        y = 250;
     }
 
     export class Player implements SpriteObject{
-        width: number = 32;
-        height: number = 48;
-        x: number = 32
-        y: number = new Game().height - 150;
-        initImage: string = "player";
+        width = 32;
+        height = 48;
+        x = 32
+        y = new Game().height - 150;
+        initImage = "player";
         images: { [name: string]: string } = {
             player: "dude",
         };
@@ -68,11 +72,11 @@ namespace CONSTANTS {
     }
 
     export class Star implements SpriteObject {
-        width: number = 30;
-        height: number = 30;
-        x: number = 70;
-        y: number = 0;
-        initImage: string = "star";
+        width = 30;
+        height = 30;
+        x = 70;
+        y = 0;
+        initImage = "star";
         images: { [name: string]: string } = {
             star: "star",
         }

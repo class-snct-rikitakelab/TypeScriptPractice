@@ -35,4 +35,4 @@ var SpriteObject = (function (_super) {
     };
     return SpriteObject;
 })(Phaser.Sprite);
-//# sourceMappingURL=SpriteObject.js.map
+//# sourceMappingURL=View.js.map

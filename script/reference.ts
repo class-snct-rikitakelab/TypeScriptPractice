@@ -3,23 +3,25 @@
 
 // Declaration type files of libraries.
 /// <reference path="../declaration/phaser.d.ts"/>
+/// <reference path="../declaration/jquery.d.ts"/>
+/// <reference path="../declaration/jqueryui.d.ts"/>
 
-// MyUtilities
+// MyUtility
 /// <reference path="MyUtilities/AssetLoader.ts"/>
 /// <reference path="MyUtilities/Assets.ts"/>
 /// <reference path="MyUtilities/PhaserGame.ts"/>
 /// <reference path="MyUtilities/Constants.ts"/>
 /// <reference path="MyUtilities/ContactManager.ts"/>
+/// <reference path="MyUtilities/Model.ts"/>
 /// <reference path="MyUtilities/SpriteObject.ts"/>
 
-// Observer
-/// <reference path="Observer/Background.ts"/>
-/// <reference path="Observer/Ground.ts"/>
-/// <reference path="Observer/Star.ts"/>
-/// <reference path="Observer/Player.ts"/>
+// Model
+// <reference path="Model/Score.ts"/>
 
-// Models
-// <reference path="Subject/Score.ts"/>
+// View
+/// <reference path="View/Ground.ts"/>
+/// <reference path="View/Star.ts"/>
+/// <reference path="View/Player.ts"/>
 
-// Game
+// Main
 /// <reference path="app.ts"/>

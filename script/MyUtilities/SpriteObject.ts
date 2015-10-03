@@ -1,9 +1,13 @@
 ﻿/// <reference path="../reference.ts"/>
 
 class SpriteObject extends Phaser.Sprite {
-    constructor(game: Phaser.Game, constants: CONSTANTS.SpriteObject, ...subject: any[]) {
+
+    protected jq: JQuery;
+
+    constructor(game: Phaser.Game, constants: CONSTANTS.SpriteObject, protected models?: Object) {
         super(game, constants.x, constants.y, constants.images[constants.initImage]);
         game.world.add(this);
+        this.jq = $(this);
         this.setSize(constants.width, constants.height);
         this.setFrameAnimation();
         this.setPhysical(constants);

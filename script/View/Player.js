@@ -6,17 +6,11 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var Player = (function (_super) {
     __extends(Player, _super);
-    function Player(game, constants) {
-        var subject = [];
-        for (var _i = 2; _i < arguments.length; _i++) {
-            subject[_i - 2] = arguments[_i];
-        }
-        _super.call(this, game, constants);
+    function Player(game, constants, models) {
+        _super.call(this, game, constants, models);
         this.constants = constants;
         this.cursors = this.game.input.keyboard.createCursorKeys();
-        this.jq = $(this);
         this.createScoreText();
-        this.score = subject[0];
         this.pointer = this.game.device.touch ? this.game.input.pointer1 : this.game.input.activePointer;
         this.game.input.onTap.add(this.tapJump, this);
     }
@@ -73,7 +67,7 @@ var Player = (function (_super) {
     Player.prototype.updateScoreText = function () {
         this.scoreText.x = this.x + this.width / 2;
         this.scoreText.y = this.y;
-        this.scoreText.text = "Score: " + this.score.getScore().toString();
+        this.scoreText.text = "Score: " + this.models["score"].getScore().toString();
     };
     Player.prototype.onOverlap = function (partner) {
         this.jq.trigger(this.constants.correctStarEvent);

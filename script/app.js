@@ -12,11 +12,10 @@ var PhaserFirstGame = (function (_super) {
     PhaserFirstGame.prototype.create = function () {
         var _this = this;
         this.game.physics.startSystem(Phaser.Physics.ARCADE);
-        this.game.stage.backgroundColor = "navy";
         this.game.stage.disableVisibilityChange = true;
         this.game.sound.play("bgm", 1.0, true);
         this.score = new Score(this.game, new CONSTANTS.Score);
-        new Background(this.game, new CONSTANTS.Background);
+        new SpriteObject(this.game, new CONSTANTS.Background);
         this.grounds = this.game.add.group();
         var children = [new CONSTANTS.Ground, new CONSTANTS.Ledge1, new CONSTANTS.Ledge2];
         children.forEach(function (value) { _this.grounds.add(new Ground(_this.game, value)); });
@@ -26,7 +25,7 @@ var PhaserFirstGame = (function (_super) {
             star.setPosition(star.x * i, star.y);
             this.stars.add(star);
         }
-        this.player = new Player(this.game, new CONSTANTS.Player, this.score);
+        this.player = new Player(this.game, new CONSTANTS.Player, { score: this.score });
         this.player.onCorrectStar(function () { _this.score.scoreUp(); });
         this.contactMgr = new ContactManager(this.game);
         this.contactMgr.addCollide(this.player, this.grounds);

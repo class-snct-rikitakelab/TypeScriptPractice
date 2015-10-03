@@ -39,7 +39,7 @@ class AssetLoader {
         this.loadAudio(loader);
     }
 
-    // I can not understand!
+    // I can not understand about preloadBar!
     private preloadBar(game: Phaser.Game) {
         game.load.image("preloadBar", "assets/image/preloadBar.png");
         game.cache.addImage("preloadBar", "assets/image/preloadBar.png", {});

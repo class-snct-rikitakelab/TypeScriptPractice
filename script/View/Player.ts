@@ -3,15 +3,13 @@
 class Player extends SpriteObject{
     private scoreText: Phaser.Text;
     private score: Score;
-    private jq: JQuery;
+
     private cursors: Phaser.CursorKeys = this.game.input.keyboard.createCursorKeys();
     private pointer: Phaser.Pointer;
 
-    constructor(game: Phaser.Game, private constants: CONSTANTS.Player, ...subject: any[]) {
-        super(game, constants);
-        this.jq = $(this);
+    constructor(game: Phaser.Game, private constants: CONSTANTS.Player, models: Object) {
+        super(game, constants, models);
         this.createScoreText();
-        this.score = subject[0];
         this.pointer = this.game.device.touch ? this.game.input.pointer1 : this.game.input.activePointer;
         this.game.input.onTap.add(this.tapJump, this);
 
@@ -77,7 +75,7 @@ class Player extends SpriteObject{
     private updateScoreText() {
         this.scoreText.x = this.x + this.width / 2;
         this.scoreText.y = this.y;
-        this.scoreText.text = "Score: " + this.score.getScore().toString();
+        this.scoreText.text = "Score: " + this.models["score"].getScore().toString();
     }
 
     onOverlap(partner: SpriteObject) {
