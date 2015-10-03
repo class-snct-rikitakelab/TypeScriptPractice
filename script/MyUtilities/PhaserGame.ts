@@ -8,7 +8,7 @@ class PhaserGame {
     constructor(assets: AssetLoader, protected constants: CONSTANTS.Game) {
         var gc = this.constants;
         this.game = new Phaser.Game(gc.width, gc.height, Phaser.AUTO, gc.renderer, {
-            preload: () => { assets.load(this.game.load); },
+            preload: () => { assets.load(this.game); },
             create: this.create, update: this.update
         });
     }

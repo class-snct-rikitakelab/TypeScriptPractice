@@ -1,6 +1,7 @@
 ﻿/// <reference path="../reference.ts"/>
 
 class AssetLoader {
+    private preloadBarFile: string = 'assets/image/preloadBar.png'
 
     private enum = {
         KEY: 0,
@@ -33,10 +34,19 @@ class AssetLoader {
     constructor() {
     }
 
-    load(loader: Phaser.Loader) {
-        this.loadImage(loader);
-        this.loadSpriteSheet(loader);
-        this.loadAudio(loader);
+    load(game: Phaser.Game) {
+        game.load.image("preloadBar", this.preloadBarFile);
+        game.load.setPreloadSprite(this.preloadBar(game));
+        this.loadImage(game.load);
+        this.loadSpriteSheet(game.load);
+        this.loadAudio(game.load);
+    }
+
+    private preloadBar(game: Phaser.Game): Phaser.Sprite {
+        var bar = game.add.sprite(game.width / 2, game.height / 2, "preloadBar");
+        bar.pivot.x = bar.width / 2;
+        bar.pivot.y = bar.height / 2;
+        return bar;
     }
 
     private loadImage(loader: Phaser.Loader) {

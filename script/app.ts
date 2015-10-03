@@ -21,7 +21,7 @@ class PhaserFirstGame extends PhaserGame{
 
         this.stars = this.game.add.group();
         for (var i = 0; i < 12; i++) {
-            var star = new Star(this.game, new CONSTANTS.Star)
+            var star = new Star(this.game, new CONSTANTS.Star);
             star.setPosition(star.x * i, star.y);
             this.stars.add(star);
         }

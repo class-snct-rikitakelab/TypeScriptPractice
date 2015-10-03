@@ -10,6 +10,7 @@ namespace CONSTANTS {
     }
 
     export class Background{
+        initImage: string = "background";
         images: {[name: string]: string} = {
             background: "sky",
         };

@@ -1,6 +1,7 @@
 /// <reference path="../reference.ts"/>
 var AssetLoader = (function () {
     function AssetLoader() {
+        this.preloadBarFile = 'assets/image/preloadBar.png';
         this.enum = {
             KEY: 0,
             FILE_NAME: 1,
@@ -26,10 +27,18 @@ var AssetLoader = (function () {
             ]
         };
     }
-    AssetLoader.prototype.load = function (loader) {
-        this.loadImage(loader);
-        this.loadSpriteSheet(loader);
-        this.loadAudio(loader);
+    AssetLoader.prototype.load = function (game) {
+        game.load.image("preloadBar", this.preloadBarFile);
+        game.load.setPreloadSprite(this.preloadBar(game));
+        this.loadImage(game.load);
+        this.loadSpriteSheet(game.load);
+        this.loadAudio(game.load);
+    };
+    AssetLoader.prototype.preloadBar = function (game) {
+        var bar = game.add.sprite(game.width / 2, game.height / 2, "preloadBar");
+        bar.pivot.x = bar.width / 2;
+        bar.pivot.y = bar.height / 2;
+        return bar;
     };
     AssetLoader.prototype.loadImage = function (loader) {
         var _this = this;

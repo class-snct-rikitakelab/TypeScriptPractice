@@ -5,7 +5,7 @@ var PhaserGame = (function () {
         this.constants = constants;
         var gc = this.constants;
         this.game = new Phaser.Game(gc.width, gc.height, Phaser.AUTO, gc.renderer, {
-            preload: function () { assets.load(_this.game.load); },
+            preload: function () { assets.load(_this.game); },
             create: this.create, update: this.update
         });
     }
