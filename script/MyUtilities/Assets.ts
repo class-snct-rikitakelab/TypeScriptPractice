@@ -7,6 +7,7 @@ class PhaserFirstAssets extends AssetLoader {
             ["sky", "sky.png"],
             ["ground", "platform.png"],
             ["star", "star.png"],
+            ["preloadBar", "preloadBar.png"],
         ],
     }
 
@@ -21,6 +22,7 @@ class PhaserFirstAssets extends AssetLoader {
         address: "assets/sound/",
         assets: [
             ["jump", ["jump.mp3", ]],
+            ["bgm", ["once.mp3", ]],
         ]
     }
 }

@@ -27,6 +27,7 @@
     <Content Include="assets\image\dude.png" />
     <Content Include="assets\image\firstaid.png" />
     <Content Include="assets\image\platform.png" />
+    <Content Include="assets\image\preloadBar.png" />
     <Content Include="assets\image\sky.png" />
     <Content Include="assets\image\star.png" />
     <Content Include="assets\sound\jump.mp3" />

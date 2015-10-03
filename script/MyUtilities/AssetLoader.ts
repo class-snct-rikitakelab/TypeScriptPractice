@@ -33,8 +33,15 @@ class AssetLoader {
     constructor() {
     }
 
-    load(loader: Phaser.Loader) {
+    load(game: Phaser.Game) {
+        var loader = game.load;
         this.loadImage(loader);
+        loader.image("preloadBar", "assets/image/preloadBar");
+        game.cache.addImage("preloadBar", "assets/image/preloadBar.png", {});
+        var preloadBar = game.add.sprite(400, 100, "preloadBar");
+        preloadBar.pivot.x = preloadBar.width / 2;
+        preloadBar.pivot.y = preloadBar.height / 2;
+        game.load.setPreloadSprite(preloadBar);
         this.loadSpriteSheet(loader);
         this.loadAudio(loader);
     }

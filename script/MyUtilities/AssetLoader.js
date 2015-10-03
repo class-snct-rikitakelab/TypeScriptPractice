@@ -26,8 +26,15 @@ var AssetLoader = (function () {
             ]
         };
     }
-    AssetLoader.prototype.load = function (loader) {
+    AssetLoader.prototype.load = function (game) {
+        var loader = game.load;
         this.loadImage(loader);
+        loader.image("preloadBar", "assets/image/preloadBar");
+        game.cache.addImage("preloadBar", "assets/image/preloadBar.png", {});
+        var preloadBar = game.add.sprite(400, 100, "preloadBar");
+        preloadBar.pivot.x = preloadBar.width / 2;
+        preloadBar.pivot.y = preloadBar.height / 2;
+        game.load.setPreloadSprite(preloadBar);
         this.loadSpriteSheet(loader);
         this.loadAudio(loader);
     };
