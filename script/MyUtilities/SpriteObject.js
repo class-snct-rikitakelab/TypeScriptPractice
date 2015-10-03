@@ -7,6 +7,10 @@ var __extends = (this && this.__extends) || function (d, b) {
 var SpriteObject = (function (_super) {
     __extends(SpriteObject, _super);
     function SpriteObject(game, constants) {
+        var subject = [];
+        for (var _i = 2; _i < arguments.length; _i++) {
+            subject[_i - 2] = arguments[_i];
+        }
         _super.call(this, game, constants.x, constants.y, constants.images[constants.initImage]);
         game.world.add(this);
         this.setSize(constants.width, constants.height);

@@ -1,7 +1,7 @@
 ﻿/// <reference path="../reference.ts"/>
 
 class SpriteObject extends Phaser.Sprite {
-    constructor(game: Phaser.Game, constants: CONSTANTS.SpriteObject) {
+    constructor(game: Phaser.Game, constants: CONSTANTS.SpriteObject, ...subject: any[]) {
         super(game, constants.x, constants.y, constants.images[constants.initImage]);
         game.world.add(this);
         this.setSize(constants.width, constants.height);
