@@ -14,11 +14,11 @@ var Player = (function (_super) {
         _super.call(this, game, constants);
         this.constants = constants;
         this.cursors = this.game.input.keyboard.createCursorKeys();
-        this.pointer = this.game.input.activePointer;
         this.jq = $(this);
         this.createScoreText();
         this.score = subject[0];
         this.game.input.onTap.add(this.tapJump, this);
+        this.pointer = this.game.device.touch ? this.game.input.pointer1 : this.game.input.activePointer;
     }
     Player.prototype.createScoreText = function () {
         this.scoreText = this.game.add.text(this.x, this.y, 'Score: 0', this.constants.ScoreFont);

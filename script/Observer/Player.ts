@@ -5,7 +5,7 @@ class Player extends SpriteObject{
     private score: Score;
     private jq: JQuery;
     private cursors: Phaser.CursorKeys = this.game.input.keyboard.createCursorKeys();
-    private pointer: Phaser.Pointer = this.game.input.activePointer;
+    private pointer: Phaser.Pointer
 
     constructor(game: Phaser.Game, private constants: CONSTANTS.Player, ...subject: any[]) {
         super(game, constants);
@@ -13,6 +13,8 @@ class Player extends SpriteObject{
         this.createScoreText();
         this.score = subject[0];
         this.game.input.onTap.add(this.tapJump, this);
+
+        this.pointer = this.game.device.touch ? this.game.input.pointer1 : this.game.input.activePointer;
 
         /* Player Touch event
         this.inputEnabled = true;
