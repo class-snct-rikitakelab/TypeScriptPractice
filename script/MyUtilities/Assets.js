@@ -15,6 +15,9 @@ var PhaserFirstAssets = (function (_super) {
                 ["ground", "platform.png"],
                 ["star", "star.png"],
                 ["preloadBar", "preloadBar.png"],
+                ["a", "baddie.png"],
+                ["b", "diamond.png"],
+                ["c", "firstaid.png"],
             ],
         };
         this.spritesheets = {

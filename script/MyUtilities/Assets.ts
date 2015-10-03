@@ -8,6 +8,9 @@ class PhaserFirstAssets extends AssetLoader {
             ["ground", "platform.png"],
             ["star", "star.png"],
             ["preloadBar", "preloadBar.png"],
+            ["a", "baddie.png"],
+            ["b", "diamond.png"],
+            ["c", "firstaid.png"],
         ],
     }
 
