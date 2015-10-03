@@ -17,8 +17,8 @@ var Player = (function (_super) {
         this.jq = $(this);
         this.createScoreText();
         this.score = subject[0];
-        this.game.input.onTap.add(this.tapJump, this);
         this.pointer = this.game.device.touch ? this.game.input.pointer1 : this.game.input.activePointer;
+        this.game.input.onTap.add(this.tapJump, this);
     }
     Player.prototype.createScoreText = function () {
         this.scoreText = this.game.add.text(this.x, this.y, 'Score: 0', this.constants.ScoreFont);
@@ -73,7 +73,7 @@ var Player = (function (_super) {
     Player.prototype.updateScoreText = function () {
         this.scoreText.x = this.x + this.width / 2;
         this.scoreText.y = this.y;
-        this.scoreText.text = "Score: " + this.pointer.isDown;
+        this.scoreText.text = "Score: " + this.score.getScore().toString();
     };
     Player.prototype.onOverlap = function (partner) {
         this.jq.trigger(this.constants.correctStarEvent);
