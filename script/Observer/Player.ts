@@ -12,7 +12,7 @@ class Player extends SpriteObject{
         this.jq = $(this);
         this.createScoreText();
         this.score = subject[0];
-        this.game.input.onTap.add(this.tupJump, this);
+        this.game.input.onTap.add(this.tapJump, this);
 
         /* Player Touch event
         this.inputEnabled = true;
@@ -54,7 +54,7 @@ class Player extends SpriteObject{
         this.game.sound.play("jump");
     }
 
-    private tupJump(pointer: Phaser.Pointer, doubleTap: boolean) {
+    private tapJump(pointer: Phaser.Pointer, doubleTap: boolean) {
         if (this.body.touching.down && doubleTap) this.jump();
     }
     
@@ -76,7 +76,8 @@ class Player extends SpriteObject{
     private updateScoreText() {
         this.scoreText.x = this.x + this.width / 2;
         this.scoreText.y = this.y;
-        this.scoreText.text = "Score: " + this.score.getScore().toString();
+        //this.scoreText.text = "Score: " + this.score.getScore().toString();
+        this.scoreText.text = "Score: " + this.pointer.isDown;
     }
 
     onOverlap(partner: SpriteObject) {

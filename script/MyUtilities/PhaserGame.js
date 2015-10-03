@@ -4,12 +4,14 @@ var PhaserGame = (function () {
         var _this = this;
         this.game = new Phaser.Game(constants.width, constants.height, Phaser.AUTO, constants.renderer, {
             preload: function () { assets.load(_this.game); },
-            create: this.create, update: this.update
+            create: this.create, update: this.update, render: this.render
         });
     }
     PhaserGame.prototype.create = function () {
     };
     PhaserGame.prototype.update = function () {
+    };
+    PhaserGame.prototype.render = function () {
     };
     return PhaserGame;
 })();

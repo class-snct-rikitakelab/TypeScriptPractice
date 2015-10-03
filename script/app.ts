@@ -14,9 +14,9 @@ class PhaserFirstGame extends PhaserGame{
         this.game.stage.backgroundColor = "navy";
 
         // Keep running on losing focus of game!
-        this.game.stage.disableVisibilityChange = true;
+        //this.game.stage.disableVisibilityChange = true;
 
-        this.game.sound.play("bgm", 1.0, true);
+        // this.game.sound.play("bgm", 1.0, true);
 
         this.score = new Score(this.game, new CONSTANTS.Score);
 
