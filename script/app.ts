@@ -41,6 +41,39 @@ class PhaserFirstGame extends PhaserGame{
     }
 }
 
+/*
+class LoadState extends Phaser.State {
+    game: Phaser.Game;
+    constructor() {
+        super();
+    }
+    titleScreenImage: Phaser.Sprite;
+
+    preload() {
+        this.load.image("preloadBar", "assets/image/.png");
+    }
+    create() {
+        this.titleScreenImage = this.add.sprite(0, 0, "title");
+        this.input.onTap.addOnce(this.titleClicked, this);
+    }
+    titleClicked() {
+        this.game.state.start("GameRunningState");
+    }
+}
+
+class Game {
+    game: Phaser.Game;
+
+    constructor() {
+        this.game = new Phaser.Game(800, 600, Phaser.WEBGL, 'content');
+
+        this.game.state.add("GameState", PhaserFirstGame, false);
+        this.game.state.add("LoadState", LoadState, false);
+        this.game.state.start("LoadState", true, true);
+    }
+}
+*/
+
 // do it after loading HTML, jQuery
 window.onload = () => {
     $(() => { new PhaserFirstGame(new PhaserFirstAssets, new CONSTANTS.Game); });

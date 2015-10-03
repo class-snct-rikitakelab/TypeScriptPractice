@@ -14,6 +14,7 @@ var PhaserFirstAssets = (function (_super) {
                 ["sky", "sky.png"],
                 ["ground", "platform.png"],
                 ["star", "star.png"],
+                ["preloadBar", "preloadBar.png"],
             ],
         };
         this.spritesheets = {
@@ -26,6 +27,7 @@ var PhaserFirstAssets = (function (_super) {
             address: "assets/sound/",
             assets: [
                 ["jump", ["jump.mp3",]],
+                ["bgm", ["once.mp3",]],
             ]
         };
     }

@@ -28,17 +28,16 @@ var AssetLoader = (function () {
         };
     }
     AssetLoader.prototype.load = function (game) {
-        game.load.image("preloadBar", this.preloadBarFile);
-        game.load.setPreloadSprite(this.preloadBar(game));
-        this.loadImage(game.load);
-        this.loadSpriteSheet(game.load);
-        this.loadAudio(game.load);
-    };
-    AssetLoader.prototype.preloadBar = function (game) {
-        var bar = game.add.sprite(game.width / 2, game.height / 2, "preloadBar");
-        bar.pivot.x = bar.width / 2;
-        bar.pivot.y = bar.height / 2;
-        return bar;
+        var loader = game.load;
+        this.loadImage(loader);
+        loader.image("preloadBar", "assets/image/preloadBar");
+        game.cache.addImage("preloadBar", "assets/image/preloadBar.png", {});
+        var preloadBar = game.add.sprite(400, 100, "preloadBar");
+        preloadBar.pivot.x = preloadBar.width / 2;
+        preloadBar.pivot.y = preloadBar.height / 2;
+        game.load.setPreloadSprite(preloadBar);
+        this.loadSpriteSheet(loader);
+        this.loadAudio(loader);
     };
     AssetLoader.prototype.loadImage = function (loader) {
         var _this = this;
