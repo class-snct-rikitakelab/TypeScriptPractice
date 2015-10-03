@@ -38,7 +38,7 @@ class PhaserFirstGame extends PhaserGame{
         this.player.onCorrectStar(() => { this.score.scoreUp(); });
 
 
-        // ========== Others ===========
+        // ========== Other ===========
         this.contactMgr = new ContactManager(this.game);
         this.contactMgr.addCollide(this.player, this.grounds);
         this.contactMgr.addCollide(this.grounds, this.stars);

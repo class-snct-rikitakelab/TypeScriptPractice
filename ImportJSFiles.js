@@ -18,24 +18,21 @@ var SCRIPT_LOCATION_MAP = {
 
 //　追加するファイルをブロックに分けられる。LOCATION_MAPのブロック名と一致させること。
 var SCRIPT_MAP = {
-    MyUtilities:
-	[
+    MyUtilities: [
         "PhaserGame.js",
         "AssetLoader.js",
         "Assets.js",
         "Constants.js",
         "ContactManager.js",
         "Model.js",
-        "View.js",
+        "SpriteObject.js",
 	],
 
-    Model:
-    [
+    Model: [
         "Score.js",
     ],
 
-    View:
-	[
+    View: [
         "Ground.js",
         "Star.js",
         "Player.js",
